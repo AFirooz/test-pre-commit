@@ -6,4 +6,3 @@ formats = "ipynb,py:percent"
 # "notebooks/" = "ipynb"
 # "./" = "py:percent"
 # "scripts/" = "py:percent"
-
