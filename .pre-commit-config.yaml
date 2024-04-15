@@ -47,11 +47,11 @@ repos:
       - id: dockerfilelint
 
 
-  # remove jupyter notebook outputs
-  - repo: https://github.com/kynan/nbstripout
-    rev: 0.7.1
-    hooks:
-      - id: nbstripout
+#  # remove jupyter notebook outputs
+#  - repo: https://github.com/kynan/nbstripout
+#    rev: 0.7.1
+#    hooks:
+#      - id: nbstripout
 
   # create .py files for .ipynb file
   - repo: https://github.com/mwouts/jupytext
