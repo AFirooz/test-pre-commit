@@ -66,14 +66,14 @@ repos:
         args: [--sync]
 
 
-  # very fast linter and formatter
-  - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.3.7
-    hooks:
-      # Run the linter.
-      - id: ruff
-        types_or: [ python, pyi, jupyter ]
-        args: [ --fix, --exit-non-zero-on-fix ]
-      # Run the formatter.
-      - id: ruff-format
-        types_or: [ python, pyi, jupyter ]
+#  # very fast linter and formatter
+#  - repo: https://github.com/astral-sh/ruff-pre-commit
+#    rev: v0.3.7
+#    hooks:
+#      # Run the linter.
+#      - id: ruff
+#        types_or: [ python, pyi, jupyter ]
+#        args: [ --fix, --exit-non-zero-on-fix ]
+#      # Run the formatter.
+#      - id: ruff-format
+#        types_or: [ python, pyi, jupyter ]
