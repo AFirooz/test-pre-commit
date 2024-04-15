@@ -62,7 +62,7 @@ repos:
         entry: jupytext --pre-commit-mode --set-formats "ipynb,py:percent"
         require_serial: true
         types_or: [jupyter, python]
-        files: ^notebooks/  # Only apply this under notebooks/
+        files: .*/notebooks/.*\.ipynb  # Only apply this under notebooks/
         args: [--sync]
 
 
