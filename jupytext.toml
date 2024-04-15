@@ -1,0 +1,9 @@
+# Pair ipynb notebooks to py:percent text notebooks
+formats = "ipynb,py:percent"
+
+# If you want to store the .ipynb notebooks in a notebooks folder, and their .py representation in a scripts folder
+# [formats]
+# "notebooks/" = "ipynb"
+# "./" = "py:percent"
+# "scripts/" = "py:percent"
+

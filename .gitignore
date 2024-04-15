@@ -1,0 +1,25 @@
+# The `temp{,*}` syntax matches __zero or more__ occurrences of the pattern inside the braces. #todo: not working
+# The `[Tt]emp` syntax matches any __one__ of the characters inside the brackets.
+
+pickledData/
+outputData/
+RawFiles/
+.idea/
+.vscode/
+__pycache__/
+.venv/
+.cache/
+DataBaseBackup/
+ER_Schema_Diagram/
+poetry_scripts/
+mypassword.py
+
+[Ss]cratch*
+[Ss]cratching*
+
+[Tt]emp*
+[Tt]mp*
+
+.#*
+.Rhistory
+.fleet/*

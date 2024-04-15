@@ -1,0 +1,79 @@
+# Install the pre-commit hooks below with
+# 'pre-commit install'
+
+# Auto-update the version of the hooks with
+# 'pre-commit autoupdate'
+
+# Run the hooks on all files with
+# 'pre-commit run --all'
+
+# `^` is used to match the start of the file name
+# `.*` is used to match any number of characters
+# `$` is used to match the end of the file name
+
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-json
+        files: .*\.json$
+
+      - id: pretty-format-json
+        files: .*\.json$
+
+      - id: check-yaml
+      - id: check-toml
+      - id: trailing-whitespace
+        types: [python]
+        exclude: .*\.ipynb$
+
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: check-added-large-files
+        args: ['--maxkb=5000']
+      - id: detect-private-key
+
+
+  # check the validity of docker files
+  - repo: https://github.com/iamthefij/docker-pre-commit
+    rev: v3.0.1
+    hooks:
+      - id: docker-compose-check
+
+  - repo: https://github.com/pryorda/dockerfilelint-precommit-hooks
+    rev: v0.1.0
+    hooks:
+      - id: dockerfilelint
+
+
+  # remove jupyter notebook outputs
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.7.1
+    hooks:
+      - id: nbstripout
+
+  # create .py files for .ipynb file
+  - repo: https://github.com/mwouts/jupytext
+    rev: v1.16.1
+    hooks:
+      - id: jupytext
+        language: python
+        entry: jupytext --pre-commit-mode --set-formats "ipynb,py:percent"
+        require_serial: true
+        types_or: [jupyter, python]
+        files: ^notebooks/  # Only apply this under notebooks/
+        args: [--sync]
+
+
+  # very fast linter and formatter
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.3.7
+    hooks:
+      # Run the linter.
+      - id: ruff
+        types_or: [ python, pyi, jupyter ]
+        args: [ --fix, --exit-non-zero-on-fix ]
+      # Run the formatter.
+      - id: ruff-format
+        types_or: [ python, pyi, jupyter ]
