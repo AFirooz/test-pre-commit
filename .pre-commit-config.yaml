@@ -1,3 +1,10 @@
+# Todos:
+# [x] ignore notebooks in "notebooks" folder in .gitignore
+# [x] run jupytext on the notebooks ignored in .gitignore ONLY
+# [x] make converted notebooks (`.py`) as light instead of percent
+# [ ] make the `.py` appear one level up
+
+
 # Install the pre-commit hooks below with
 # 'pre-commit install'
 
@@ -60,7 +67,7 @@ repos:
     hooks:
       - id: jupytext
         language: python
-#        entry: jupytext --pre-commit-mode --set-formats "ipynb,py:percent"
+        entry: jupytext --pre-commit-mode --set-formats "ipynb,py:light"
         require_serial: true
         types_or: [jupyter, python]
         files: .*/notebooks/.*\.ipynb  # Only apply this under notebooks/ folder
