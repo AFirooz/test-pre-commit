@@ -1,31 +1,14 @@
-# ---
-# jupyter:
-#   jupytext:
-#     cell_metadata_filter: -all
-#     formats: ipynb,py:percent
-#     text_representation:
-#       extension: .py
-#       format_name: percent
-#       format_version: '1.3'
-#       jupytext_version: 1.16.1
-# ---
-
-# %%
 import torch
 import torch.nn as nn
 from torchvision import transforms
 from torch.utils.data import DataLoader
 
-# %%
 import nn_modules as nnm
 import nn_preprocessor as nnp
 
-
-# %% [markdown]
 # import filestructure as fs
 
 
-# %%
 def main():
     hyp = nnp.Hyperparams(
         device="cpu",
@@ -100,7 +83,7 @@ def main():
             # Run the forward pass
             predictions = model(data)
             # calculate the loss
-            loss = criterion(predictions, label)
+            # loss = criterion(predictions, label)
 
             # For classification accuracy
             _, predicted = torch.max(predictions, 1)
@@ -115,6 +98,5 @@ def main():
     print(f"Accuracy: {accuracy:.4f}")
 
 
-# %%
 if __name__ == "__main__":
     main()
