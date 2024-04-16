@@ -107,4 +107,3 @@ with open(join(PklPath.db, "db_schema.pkl"), "rb") as pickle_in:
 #
 #     with open (f'../../outputData/5_removeNull.sql', 'a') as file:
 #         file.write(final_statement)
-

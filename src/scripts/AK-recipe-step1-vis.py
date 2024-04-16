@@ -89,7 +89,7 @@ plt.savefig(path.join(outdir, "mz_hist_groups.png"), dpi=300) if savefig else pr
 plt.show()
 # -
 
-# ## will a person have 2 lines? 
+# ## will a person have 2 lines?
 
 # +
 # fig, ax = plt.subplots(nrows=2, figsize=(10, 7), dpi=150, sharex=True)

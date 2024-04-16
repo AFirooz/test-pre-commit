@@ -63,6 +63,7 @@ print("Done")
 
 # # 2 - Define functions
 
+
 # +
 #  separate the PK from the table df
 def _is_blank(myString: str) -> bool:

@@ -192,7 +192,7 @@ fig.savefig(path.join(outdir, "pca_2d_side.png")) if savefig else None
 
 # # t-SNE
 #
-# **t-Distributed Stochastic Neighbor Embedding (t-SNE)** is a (prize-winning) technique for dimensionality reduction that is particularly 
+# **t-Distributed Stochastic Neighbor Embedding (t-SNE)** is a (prize-winning) technique for dimensionality reduction that is particularly
 # well suited for the visualization of high-dimensional datasets. The technique can be implemented via Barnes-Hut approximations, allowing it to be applied on large real-world datasets. t-Distributed Stochastic Neighbor Embedding (t-SNE) is an unsupervised, non-linear technique primarily used for data exploration and visualizing high-dimensional data. In simpler terms, t-SNE gives you a feel or intuition of how the data is arranged in a high-dimensional space. It was developed by Laurens van der Maatens and Geoffrey Hinton in 2008.
 #
 # ## t-SNE vs PCA
@@ -226,7 +226,7 @@ fig.savefig(path.join(outdir, "tsne_2d_side.png")) if savefig else None
 # -
 
 # # ISOMAP
-# Isomap stands for **isometric mapping.** Isomap is a non-linear dimensionality reduction method based on the spectral theory which tries to 
+# Isomap stands for **isometric mapping.** Isomap is a non-linear dimensionality reduction method based on the spectral theory which tries to
 # preserve the geodesic distances in the lower dimension. Isomap starts by creating a neighborhood network. After that, it uses graph distance to the approximate geodesic distance between all pairs of points. And then, through eigenvalue decomposition of the geodesic distance matrix, it finds the low dimensional embedding of the dataset. In non-linear manifolds, the Euclidean metric for distance holds good if and only if neighborhood structure can be approximated as linear. If a neighborhood contains holes, then Euclidean distances can be highly misleading. In contrast to this, if we measure the distance between two points by following the manifold, we will have a better approximation of how far or near two points are. Let's understand this with an extremely simple 2-D example.
 
 # +
