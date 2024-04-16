@@ -4,7 +4,7 @@
 # [x] run jupytext on the notebooks ignored in .gitignore ONLY
 # [x] ONLY clear the notebooks' output not in the "notebooks" folder
 # [x] make converted notebooks (`.py`) as light instead of percent
-# [x] make the `.py` appear one level up in "scripts" folder
+# [x] make the `.py` appear one level up in "_notebooks" folder
 
 
 # Install the pre-commit hooks below with
@@ -65,7 +65,7 @@ repos:
         exclude: .*/notebooks/.*\.ipynb
 
 
-  # create .py in "scripts" folder for ONLY .ipynb files that are in "notebooks" folder
+  # create .py in "_notebooks" folder for ONLY .ipynb files that are in "notebooks" folder
   # https://stackoverflow.com/questions/69909719/jupytext-pre-commit-config-when-notebooks-are-ignored-in-git
   #     always_run: true  # if true , this hook will run even if there are no matching files.
   #     pass_filenames: false
@@ -74,7 +74,7 @@ repos:
     hooks:
       - id: jupytext
         language: python
-        entry: jupytext --pre-commit-mode --set-formats "notebooks//ipynb,scripts//py:light"
+        entry: jupytext --pre-commit-mode --set-formats "notebooks//ipynb,_notebooks//py:light"
         require_serial: true  #  if true this hook will execute using a single process instead of in parallel.
         types_or: [jupyter, python]
         files: .*/notebooks/.*\.ipynb

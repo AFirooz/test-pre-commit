@@ -1,7 +1,7 @@
 # ---
 # jupyter:
 #   jupytext:
-#     formats: notebooks//ipynb,scripts//py:light
+#     formats: notebooks//ipynb,_notebooks//py:light
 #     text_representation:
 #       extension: .py
 #       format_name: light
@@ -34,7 +34,6 @@ print("Done")
 # Even if you have more information to insert to PersonalInfo, add the IDs first and then create update statements
 # ## 2.1 - Person Info
 # Adding the new IDs to PersonalInfo
-
 
 # +
 def insertPK_statement(

@@ -1,7 +1,7 @@
 # ---
 # jupyter:
 #   jupytext:
-#     formats: notebooks//ipynb,scripts//py:light
+#     formats: notebooks//ipynb,_notebooks//py:light
 #     text_representation:
 #       extension: .py
 #       format_name: light
@@ -18,7 +18,6 @@ from submodules import utils as ut
 import pandas as pd
 import numpy as np
 import pickle
-# fu ruff, you cant remove me :)
 
 # +
 # importing database results as dataframes
