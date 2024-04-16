@@ -12,7 +12,7 @@ __pycache__/
 DataBaseBackup/
 ER_Schema_Diagram/
 poetry_scripts/
-notebooks/*.ipynb
+notebooks/
 mypassword.py
 
 [Ss]cratch*

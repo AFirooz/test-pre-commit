@@ -4,7 +4,7 @@
 # [x] run jupytext on the notebooks ignored in .gitignore ONLY
 # [x] ONLY clear the notebooks' output not in the "notebooks" folder
 # [x] make converted notebooks (`.py`) as light instead of percent
-# [ ] make the `.py` appear one level up
+# [x] make the `.py` appear one level up in "scripts" folder
 
 
 # Install the pre-commit hooks below with
@@ -35,7 +35,7 @@ repos:
       - id: check-toml
       - id: trailing-whitespace
         types: [python]
-        exclude: .*\.ipynb$
+        exclude: .*\.ipynb$  # to avoid upcomming problems
 
       - id: end-of-file-fixer
       - id: mixed-line-ending
@@ -56,26 +56,28 @@ repos:
       - id: dockerfilelint
 
 
-  # remove jupyter notebook outputs if the notebooks are not in .gitignore
+  # strip jupyter outputs if the notebook is not in "notebooks" folder
+  # Note that the "notebooks" folder is ignored in ".gitignore"
   - repo: https://github.com/kynan/nbstripout
     rev: 0.7.1
     hooks:
       - id: nbstripout
         exclude: .*/notebooks/.*\.ipynb
 
-  # create .py files for .ipynb file
+
+  # create .py in "scripts" folder for ONLY .ipynb files that are in "notebooks" folder
+  # https://stackoverflow.com/questions/69909719/jupytext-pre-commit-config-when-notebooks-are-ignored-in-git
+  #     always_run: true  # if true , this hook will run even if there are no matching files.
+  #     pass_filenames: false
   - repo: https://github.com/mwouts/jupytext
     rev: v1.16.1
     hooks:
       - id: jupytext
         language: python
         entry: jupytext --pre-commit-mode --set-formats "notebooks//ipynb,scripts//py:light"
-        require_serial: true
+        require_serial: true  #  if true this hook will execute using a single process instead of in parallel.
         types_or: [jupyter, python]
-        files: .*/notebooks/.*\.ipynb  # Only apply this under notebooks/ folder
-        # https://stackoverflow.com/questions/69909719/jupytext-pre-commit-config-when-notebooks-are-ignored-in-git
-#        always_run: true
-#        pass_filenames: false
+        files: .*/notebooks/.*\.ipynb
         args: [--sync]
 
 
