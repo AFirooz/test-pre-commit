@@ -18,6 +18,7 @@ from submodules import utils as ut
 import pandas as pd
 import numpy as np
 import pickle
+# fu ruff, you cant remove me :)
 
 # +
 # importing database results as dataframes
