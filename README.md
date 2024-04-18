@@ -1,7 +1,7 @@
 Todos:
 [x] fix some .ipynb breaking
 [x] ignore notebooks in "notebooks" folder in .gitignore
-[x] run jupytext on the notebooks ignored in .gitignore ONLY
+[ ] run jupytext on the notebooks ignored in .gitignore ONLY
 [x] ONLY clear the notebooks' output not in the "notebooks" folder
 [x] make converted notebooks (`.py`) as light instead of percent
 [x] make the `.py` appear one level up in "_notebooks" folder
