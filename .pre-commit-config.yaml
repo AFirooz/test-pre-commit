@@ -58,15 +58,16 @@ repos:
 
   # create .py in "_notebooks" folder for ONLY .ipynb files that are in "notebooks" folder
   # https://stackoverflow.com/questions/69909719/jupytext-pre-commit-config-when-notebooks-are-ignored-in-git
-  #     always_run: true  # if true , this hook will run even if there are no matching files.
+  #     always_run: true  # if true, this hook will run even if there are no matching files.
   #     pass_filenames: false
+  #     require_serial: true  #  if true, this hook will execute using a single process instead of in parallel.
   - repo: https://github.com/mwouts/jupytext
     rev: v1.16.1
     hooks:
       - id: jupytext
         language: python
-        entry: jupytext --pre-commit-mode --set-formats "notebooks//ipynb,_notebooks//py:light"
-        require_serial: true  #  if true this hook will execute using a single process instead of in parallel.
+        entry: jupytext --pre-commit-mode --set-formats "notebooks//ipynb,scripts//py:light"
+        require_serial: true
         types_or: [jupyter, python]
         files: .*/notebooks/.*\.ipynb
         args: [--sync]
