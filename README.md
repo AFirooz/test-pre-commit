@@ -9,4 +9,4 @@ Todos:
 [x] Change the _notebooks to something better
 [ ] run jupytext on the notebooks ignored in .gitignore ONLY
 [ ] Add ‘--sync’ to the entry point and see if .ipynb is in 2-way sync with .py
-
+[ ] How to move notebooks and linked scripts?
